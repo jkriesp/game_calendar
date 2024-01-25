@@ -1,3 +1,4 @@
+import "../src/app/globals.css";
 import React, { useState, useEffect } from 'react';
 import Calendar from '../src/components/Calendar/Calendar'; // Adjust path as needed
 import { ApiResponse } from '@/types/gameTypes';
@@ -23,7 +24,10 @@ export default function Home() {
             <Calendar apiResponse={apiResponse} />
         ) : (
             // Render a loading indicator or a message
-            <p>Loading...</p>
+            <div className="text-3xl font-bold underline">
+                <p>Loading...</p>
+
+            </div>
         )}
     </div>
     );
