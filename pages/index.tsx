@@ -10,7 +10,7 @@ export default function Home() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch('http://localhost:3000/api/games?dates=2024-01-01,2024-03-28');
+            const response = await fetch('/api/games?dates=2024-01-01,2024-03-28');
             const data = await response.json();
             // Simulate a delay
             setTimeout(() => {
