@@ -22,7 +22,7 @@ const Calendar: React.FC<CalendarProps> = ({ apiResponse }) => {
                       className="w-full h-48 bg-cover bg-center" 
                       style={{ backgroundImage: `url(${game.backgroundImage})` }}
                   >
-                      <div className="bg-black bg-opacity-40 flex flex-col justify-end h-full p-2">
+                      <div className="bg-black bg-opacity-50 flex flex-col justify-end h-full p-2  transition duration-700 hover:bg-opacity-0">
                           <span className="text-white text-lg font-bold text-center">{game.name}</span>
                           <span className="text-white text-base">{date}</span> {/* Displaying the release date */}
                       </div>

@@ -18,17 +18,23 @@ export default function Home() {
     }, []);
 
     return (
-        <div>
-        {apiResponse?.results ? (
-            // Render your calendar component with the data
-            <Calendar apiResponse={apiResponse} />
-        ) : (
-            // Render a loading indicator or a message
-            <div className="text-3xl font-bold underline">
-                <p>Loading...</p>
+        <div className="bg-gradient-to-r  from-gray-950 to-blue-950 min-h-screen">
+            <header className="text-center py-8">
+                <h1 className="text-white text-4xl font-bold">Game Calendar</h1>
+            </header>
+            <div>
+                {apiResponse?.results ? (
+                    // Render your calendar component with the data
+                    <Calendar apiResponse={apiResponse} />
+                ) : (
+                    // Render a loading indicator or a message
+                    <div className="text-3xl font-bold underline">
+                        <p>Loading...</p>
 
+                    </div>
+                )}
             </div>
-        )}
-    </div>
+        </div>
+
     );
 }
