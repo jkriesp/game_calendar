@@ -10,7 +10,20 @@ export default function Home() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch('/api/games?dates=2024-01-01,2024-03-28');
+
+            // Get today's date
+            const today = new Date();
+
+            // Format the start date as the frist day of the current month
+            const startDate = new Date(today.getFullYear(), today.getMonth(), 1);
+            const formattedStartDate = startDate.toISOString().split('T')[0];
+
+            // Calculate the date 3 months from the start date
+            const endDate = new Date(startDate);
+            endDate.setMonth(endDate.getMonth() + 3);
+            const formattedEndDate = endDate.toISOString().split('T')[0];
+
+            const response = await fetch(`/api/games?dates=${formattedStartDate},${formattedEndDate}`);
             const data = await response.json();
             // Simulate a delay
             setTimeout(() => {
