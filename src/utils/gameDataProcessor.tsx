@@ -20,3 +20,4 @@ export default function processGameData(apiResponse: ApiResponse): ProcessedGame
 
   return organizedData;
 }
+
